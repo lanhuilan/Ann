@@ -29,5 +29,6 @@ git checkout master 切换到主干
 git checkout -b dev 创建并切换到新的分支上
 git merge dev 将指定分支dev合并到当前分支上 Fast forward模式，git merge --no-ff -m "merge with no-ff" dev, 非Fast forward模式，区别在哪里，
 没看出来，（）？？？？？？（标记一下，以后看）-m "注释内容" 作用应该是添加注释文字。
+git log --graph --pretty=oneline --abbrev-commit 查看提交记录，和合并路线图，简单模式。
 
 
