@@ -19,3 +19,5 @@ git remote add origin https://github.com/lanhuilan（用户名）/Git（远程�
 git push -u origin master 第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master
 分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
 git push origin master 本地仓库内容推送到远程仓库
+git clone 将远程仓库克隆到本地。支持多种协议，包括https（示例：git clone http://github.com/lanhuilan/swan），但通过ssh支持的原生git协议（示
+例：git clone git@github.com:lanhuilan/Ann.git）速度最快
