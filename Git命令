@@ -12,4 +12,6 @@ git reflog  查看版本命令记录，记录所有命令的版本号
 git checkout -- readme.txt 把readme.txt文件在工作区的修改全部撤销，这里有两种情况：一种是readme.txt自修改后还没有被放到暂存区撤销修改就回到
 和版本库一模一样的状态；一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。总之，就是让这个文件回到最近
 一次git commit或git add时的状态。
+  git checkout -- readme.txt 恢复本地工作区删除但是版本库仍存在的文件
 git reset HEAD readme.txt 将add到缓存区的内容撤销，文件状态回到本地修改但没有添加到add缓存区的状态
+git rm readne.txt 删除文件
