@@ -1,0 +1,11 @@
+cd 路径跳转
+git init  建立资源仓库，在当前路径下添加版本控制
+git add readme.txt 添加文件
+git commit -m "注释" 提交文件
+git status  查看当前仓库状态
+git diff 查看文件差异
+git status告诉你有文件被修改过，用git diff可以查看修改内容
+HEAD 指针，指向当前版本；head^,上一个版本；Head^^,上上一个版本：……head~100,向上100个版本
+git reset --hard 版本号 回滚到指定版本号，版本号可以只写前几位
+git log 查看版本提交记录，回滚后，版本后的历史记录会消失
+git reflog  查看版本命令记录，记录所有命令的版本号
