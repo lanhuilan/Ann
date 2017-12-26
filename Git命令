@@ -36,5 +36,6 @@ git stash apply 恢复当前工作进度
 git stash apply stash@{0} 恢复当前工作到指定进度
 git stash drop 删除冻结的工作进度
 git stash pop 恢复工作进度，并删除冻结记录
+git branch -D dev 强制删除一个还没有合并过的分支
 
 
