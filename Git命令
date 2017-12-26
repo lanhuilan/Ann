@@ -37,5 +37,11 @@ git stash apply stash@{0} 恢复当前工作到指定进度
 git stash drop 删除冻结的工作进度
 git stash pop 恢复工作进度，并删除冻结记录
 git branch -D dev 强制删除一个还没有合并过的分支
+git remote -v 查看远程库信息
+git push origin dev  提交本地dev分支到远程库
+git pull 抓取远程的新提交
+git checkout -b dev origin.dev 在本地创建和远程分支名字相同的分支
+git branch --set-upstream dev origin/dev 建立本地分支和远程分支的关联
+
 
 
