@@ -30,5 +30,11 @@ git checkout -b dev 创建并切换到新的分支上
 git merge dev 将指定分支dev合并到当前分支上 Fast forward模式，git merge --no-ff -m "merge with no-ff" dev, 非Fast forward模式，区别在哪里，
 没看出来，（）？？？？？？（标记一下，以后看）-m "注释内容" 作用应该是添加注释文字。
 git log --graph --pretty=oneline --abbrev-commit 查看提交记录，和合并路线图，简单模式。
+git stash 将当前已经修改并提交到缓存区的修改内容暂时冻结
+git stash list 查看当前冻结的工作进度列表
+git stash apply 恢复当前工作进度
+git stash apply stash@{0} 恢复当前工作到指定进度
+git stash drop 删除冻结的工作进度
+git stash pop 恢复工作进度，并删除冻结记录
 
 
