@@ -1,0 +1,55 @@
+ 创建临时表
+drop table tablename1
+ Create Global Temporary Table tablename1
+(id  varchar2(20),
+empcode varchar2(20),
+empname varchar2(100),
+gender varchar2(20),
+orgid varchar2(100)
+)
+On Commit Delete Rows;
+生成临时表数据
+insert into tablename1(
+		 id,empcode,empname,gender,orgid)
+select '123',e.empcode, e.empname, e.gender, e.orgid
+  from tablename2 e
+  where e.orgid 
+   in ('1111','2222') 
+
+select * from tablename1
+
+
+select *
+  from tablename1
+ pivot (
+   max(orgid)  --聚合操作函数
+   for  empname--行转列标准
+   in ('张三','李四') --行转列列取值和顺序
+)
+  ID                empcode  gender  张三   李四   王五   赵六
+1	0180220161502JOVC	0001	    m		   部门1
+2	0180220161502M8P6	0002	    f		         部门2
+3	0180220161502AB2A	0003	    m		               部门3
+4	0180220161502TX6S	0004	    f		                     部门4
+ 
+
+
+select * from (
+select *
+  from tablename1
+ unpivot (
+   data1  --聚合操作函数
+   for  detail--行转列标准
+   in (empcode,orgid,gender) --行转列列取值和顺序
+))
+pivot (
+   max(data1)  --聚合操作函数
+   for  detail--行转列标准
+   in ('EMPCODE','ORGID','GENDER') --行转列列取值和顺序
+)
+  ID                empname   'EMPCODE'     'ORGID'  'GENDER'
+1	0180220161502JOVC	张三        0001	        部门1	   m
+2	0180220161502M8P6	李四	      0002	        部门2	   m
+3	0180220161502AB2A	王五	      0003	        部门3	   m
+4	0180220161502TX6S	赵六	      0004	        部门4	   m
+	
